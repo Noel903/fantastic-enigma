@@ -17,32 +17,32 @@ const Login = () => {
   //   const handleSumbit = async (event) => {
   //     event.preventDefault()
 
-  //     const response = await fetch(`${BASE_URL}/users/login`, {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json'
-  //       },
-  //       body: JSON.stringify({
-  //         user: {
-  //           username: username,
-  //           password: password
-  //         }
-  //       })
-  //     })
+      const response = await fetch(`${BASE_URL}/users/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          user: {
+            username: username,
+            password: password
+          }
+        })
+      })
 
-  //     if (response) {
-  //       const data = await response.json()
-  //       const token = data.data.token
-  //       setTok
-  //       localStorage.setItem('token', token)
-  //       setUsername('')
-  //       setPassword('')
-  //     }
+      if (response) {
+        const data = await response.json()
+        const token = data.data.token
+        setTok
+        localStorage.setItem('token', token)
+        setUsername('')
+        setPassword('')
+      }
 
-  //     setUsername('')
-  //     setPassword('')
-  //     history.push('/profile')
-  //   }
+      setUsername('')
+      setPassword('')
+      history.push('/profile')
+    }
   return (
     <div id="login">
       <form onSubmit={handleSumbit}>
@@ -65,7 +65,8 @@ const Login = () => {
         <button type="submit">Submit</button>
       </form>
     </div>
-  )
-}
+  )};
 
-export default Login
+
+
+export default Login;

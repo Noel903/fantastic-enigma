@@ -5,6 +5,7 @@ import Home from './components/Home'
 import Login from './components/Login'
 import Posts from './components/Posts'
 import Profile from './components/Profile'
+import { Component } from './components';
 
 function App() {
   return (
@@ -22,4 +23,7 @@ function App() {
   )
 }
 
-export default App
+// export default App
+export default function App() {
+  return <Component />;
+}
